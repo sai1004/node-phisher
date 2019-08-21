@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
-
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,7 @@
   "homepage": "https://github.com/sai1004/node-phisher#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "localtunnel": "^1.9.2",
     "nodemon": "^1.19.1"
   }
 }

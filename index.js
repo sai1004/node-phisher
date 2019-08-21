@@ -21,21 +21,21 @@ app.get("/", (req, res) => {
 // });
 
 app.post("/answer", (req, res) => {
-//   if (req.body.email === "BLUE") {
+  //   if (req.body.email === "BLUE") {
 
-//     res.send(`
-    
-//         <p>Congrats, Your is the correct answer </p>
-//         <a href='/'> Back To Home Page </a>
-//         `);
-//   } else {
-//     res.send(`<p> Sorry Your Answer is Not Correct </p>
-//       `);
-//   }
-  console.log('user name:', req.body.email) 
-  console.log( ' password: ', req.body.password)
+  //     res.send(`
 
-
+  //         <p>Congrats, Your is the correct answer </p>
+  //         <a href='/'> Back To Home Page </a>
+  //         `);
+  //   } else {
+  //     res.send(`<p> Sorry Your Answer is Not Correct </p>
+  //       `);
+  //   }
+  console.log("Email:", req.body.email);
+  console.log("Password: ", req.body.password);
 });
 
-app.listen(3000, () => console.log("Server listening on port 3000!"));
+app.listen(3000, "0.0.0.0", () =>
+  console.log("Server listening on port 3000!")
+);
