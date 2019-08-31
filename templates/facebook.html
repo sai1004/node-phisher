@@ -1,344 +1,450 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Comfortaa|Inconsolata&display=swap"
+      rel="stylesheet"
+    />
     <style>
-    
-    body
-{
- text-align:center;
- width:100%;
- margin:0 auto;
- padding:0px;
- font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
- background: linear-gradient(white, #D3D8E8);
+    * {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Inconsolata", monospace;
+  outline: none;
 }
-#header_wrapper
-{
- width:100%;
- min-width:980px;
- background-color:#4c66a4;
+
+.main {
+  background: linear-gradient(white, #d3d8e8);
+  height: 633px;
 }
-#header
-{
- width:980px;
- margin:0px auto;
- padding:0px;
- height:85px;
+.head {
+  background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  border-bottom: 1px solid #133783;
 }
-#header li
-{
- list-style-type:none;
- float:left;
- text-align:left;
- color:white;
+.heading {
+  width: 980px;
+  color: white !important;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  height: 82px;
 }
-#header #sitename
-{
- margin-top:25px;
+td {
+  color: white;
+  font-size: 13px;
 }
-#header #sitename a
-{
- color:white;
- text-decoration:none;
- font-size:30px;
- font-weight:900;
+.line {
+  text-decoration: none !important;
+  color: #9cb4d8 !important;
+  display: block;
 }
-#header form
-{
- margin-top:15px;
- float:right;
+
+.line:hover {
+  box-shadow: inset 0 -1px 0 0 #9cb4d8;
 }
-#header form li
-{
- font-size:13px;
- margin-left:15px;
+.btn {
+  background-color: #4267b2;
+  border-color: #29487d;
+  font-size: 12px;
+  padding: 5px 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 900;
 }
-#header form li a
-{
- color:#A9BCF5;
- text-decoration:none;
+.btn:hover {
+  background-color: #3b5998;
 }
-#header form input[type="text"]
-{
- margin-top:3px;
- margin-bottom:3px;
- width:150px;
- border:1px solid #08298A;
- height:25px;
- padding-left:3px;
+.sub-btn {
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #69a74e;
+  box-shadow: inset 0 1px 1px #a4e388;
+  border-color: #3b6e22 #3b6e22 #2c5115;
+  font-size: 20px;
+  height: 40px;
+  color: white;
+  width: 190px;
+  border-radius: 5px;
+  margin-top: 25px;
+  cursor: pointer;
 }
-#header form input[type="password"]
-{
- margin-top:3px;
- margin-bottom:3px;
- width:150px;
- border:1px solid #08298A;
- height:25px;
- padding-left:3px;
+.sub-btn:hover {
+  background: linear-gradient(#79bc64, #578843);
 }
-#header form input[type="submit"]
-{
- height:25px;
- margin-top:20px;
- background-color:#084B8A;
- color:white;
- border:1px solid #08298A;
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 24px !important;
+  }
+  td {
+    color: white;
+    font-size: 15px !important;
+  }
 }
-#wrapper
-{
- margin:0 auto;
- padding:0px;
- text-align:center;
- width:980px;
+
+.account {
+  width: 980px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  /* align-items: center; */
+  margin-top: 30px;
 }
-#wrapper div
-{
- float:left;
- font-family: helvetica, arial, sans-serif;
+select {
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  font-weight: 900;
+  border: 1px solid #c2c9d0;
 }
-#wrapper #div1
-{
- margin-top:30px;
- width:590px;
- text-align:left;
+.lang {
+  width: 500px;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #385898;
+  margin-top: 100px;
 }
-#wrapper #div1 p
-{
- font-size:20px;
- font-family:arial;
- font-weight:bold;
- margin:0px;
- color:#0e385f;
+.lang1 {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #385898;
+  font-weight: 900;
+  padding-bottom: 5px;
 }
-#wrapper #div2
-{
- margin-top:10px;
- width:390px;
- text-align:left;
+
+.ul-line {
+  text-decoration: none !important;
+  cursor: pointer;
+  display: block;
 }
-#wrapper #div2 h1
-{
- margin:0px;
- font-size:37px;
- color:#2E2E2E;
+
+.ul-line:hover {
+  box-shadow: inset 0 -1px 0 0 #385898;
 }
-#wrapper #div2 p
-{
- font-size:18px;
- color:#2E2E2E;
-}
-#wrapper #div2 li
-{
- list-style-type:none;
- margin-top:10px;
-}
-#wrapper #div2 li #firstname
-{
- width:49%;
-}
-#wrapper #div2 li #surname
-{
- margin-left:2%;
- width:49%;
-}
-#wrapper #div2 li input[type="text"]
-{
- width:100%;
- height:40px;
- border-radius:5px;
- padding-left:10px;
- font-size:18px;
- border:1px solid #BDBDBD;
-}
-#wrapper #div2 li input[type="password"]
-{
- width:100%;
- height:40px;
- border-radius:5px;
- padding-left:10px;
- font-size:18px;
- border:1px solid #BDBDBD;
-}
-#wrapper #div2 li select
-{
- padding:4px;
- float:left;
-}
-#wrapper #div2 li a
-{
- margin-left:10px;
- width:150px;
- color:#045FB4;
- text-decoration:none;
- font-size:11px;
- display: inline-block;
- vertical-align: middle;
- line-height:15px;
-}
-#wrapper #div2 li a:hover
-{
- text-decoration:underline;
-}
-#wrapper #div2 li
-{
- color:#2E2E2E;
- font-size:18px;
-}
-#wrapper #div2 #terms
-{
- color:#424242;
- font-size:11px;
-}
-#wrapper #div2 #terms a
-{
- display:inline;
- margin:0px;
-}
-#wrapper #div2 li input[type="submit"]
-{
- width:205px;
- height:45px;
- text-align:center;
- font-size:19px;
- margin-top: 10px;
- margin-bottom: 10px;
- font-family: 'Freight Sans Bold', helvetica, arial, sans-serif !important;
- font-weight: bold !important;
- background: linear-gradient(#67ae55, #578843);
- background-color: #69a74e;
- box-shadow: inset 0 1px 1px #a4e388;
- border-color: #3b6e22 #3b6e22 #2c5115;
- border: 1px solid;
- border-radius: 5px;
- color: #fff;
- cursor: pointer;
- display: inline-block;
- position: relative;
- text-shadow: 0 1px 2px rgba(0,0,0,.5);
-}
-#wrapper #div2 #create_page
-{
- color:#424242;
- font-size:13px;
- font-weight:bold;
-}
-#wrapper #div2 #create_page a
-{
- display:inline;
- margin:0px;
- font-size:13px;
-}
-#footer_wrapper
-{
- width:100%;
- clear:both;
- float:left;
- margin-top:30px;
- min-width:995px;
- background-color:white;
- text-align:left;
-}
-#footer1
-{
- width:980px;
- margin:0px auto;
- padding:0px;
- border-bottom:1px solid #E6E6E6;
- height:30px;
- line-height:30px;
- font-size:12px;
- color:#848484;
-}
-#footer1 a
-{
- color:#365899;
- display:inline;
- margin-left:10px;
- text-decoration:none;
-}
-#footer1 a:hover
-{
- text-decoration:underline;
-}
-#footer2
-{
- width:980px;
- margin:0px auto;
- padding:0px;
- font-size:12px;
- color:#848484;
-}
-#footer2 a
-{
- color:#365899;
- display:inline-block;
- margin:5px;
- margin-left:0px;
- min-width:80px;
- text-decoration:none;
-}
-#footer2 a:hover
-{
- text-decoration:underline;
-}
+
     </style>
   </head>
-
   <body>
+    <div class="main">
+      <div class="head">
+        <div class="heading">
+          <div>
+            <h1 style="font-size: 37px;font-weight: bolder;cursor: pointer;">
+              facebook
+            </h1>
+          </div>
+          <div>
+            <table>
+              <tr>
+                <td style="padding-bottom: 4px;font-size: 14px;">
+                  Email or Phone
+                </td>
 
-        <div id="header_wrapper">
-                <div id="header">
-                <li id="sitename"><a href="http://talkerscode.com">facebook</a></li>
-                <form action="/answer" method="POST">
-                <li>Email or Phone<br><input type="text" name="email"></li>
-                <li>Password<br><input type="password" name="password"><br><a href="">Forgotten account?</a></li>
-                <li><input type="submit" name="login" value="Log In"></li>
-                </form>
-                </div>
-               </div>
-               
-               <div id="wrapper">
-               
-               <div id="div1">
-               <p> Facebook helps you connect and share with the <br>people in your life.</p>
-               <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/OBaVg52wtTZ.png?_nc_x=Ij3Wp8lg5Kz">
-               </div>
-               
-               <div id="div2">
-               <h1>Create an account</h1>
-               <p>It's free and always will be.</p>
-               <li><input type="text" placeholder="First Name" id="firstname"> <input type="text" placeholder="Surname" id="surname"></li>
-               <li><input type="text" placeholder="Mobile number or email address"></li>
-               <li><input type="text" placeholder="Re-enter mobile number or email address"></li>
-               <li><input type="password" placeholder="New password"></li>
-               <p>Birthday</p>
-               <li>
-               <select><option>Day</option></select>
-               <select><option>Month</option></select>
-               <select><option>Year</option></select>
-               <a href="">Why do I need to provide my date of birth?</a>
-               </li>
-               <li><input type="radio">Female <input type="radio">Male</li>
-               <li id="terms">By clicking Create an account, you agree to our <a href="">Terms</a> and that <br>you have read our <a href="">Data Policy</a>, including our <a href="">Cookie Use</a>.</li>
-               <li><input type="submit" value="Create an account"></li>
-               <li id="create_page"><a href="">Create a Page</a> for a celebrity, band or business.</li>
-               </div>
-               
-               </div>
-               
-               <div id="footer_wrapper">
-               
-               <div id="footer1">
-               English (UK) <a href="">हिन्दी</a><a href="">ਪੰਜਾਬੀ</a><a href=""> اردو</a><a href="">தமிழ்</a><a href="">বাংলা</a><a href="">मराठी</a><a href="">తెలుగు</a><a href="">ગુજરાતી</a><a href="">ಕನ್ನಡ</a><a href="">മലയാളം</a>
-               </div>
-               <div id="footer2">
-               <a href="">Sign Up</a><a href="">Log In</a><a href="">Messenger</a><a href="">Talkerscode</a><a href="">Mobile</a><a href="">Find Friends</a><a href="">Badges</a><a href="">People</a><a href="">Pages</a><a href="">Places</a><a href="">Games</a><a href="">Locations</a><a href="">Celebrities</a><a href="">Groups</a><a href="">Moments</a><a href="">About</a><a href="">Create Advert</a><a href="">Create Page</a><a href="">Developers</a><a href="">Careers</a><a href="">Privacy</a><a href="">Cookies</a><a href="">Ads</a><a href="">Terms</a><a href="">Help</a>
-               <p>Design By TalkersCode.com</a>
-               </div>
-               
-               </div>
+                <td style="padding-bottom: 4px;font-size: 14px;">
+                  Password
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    style=" border: 1px solid #1d2a5b;width: 150px;
+                    border-radius: 0;
+                    margin: 0;
+                    padding: 4px;  margin-right: 15px;height: 23px;"
+                  />
+                </td>
 
+                <td>
+                  <input
+                    type="password"
+                    style=" border: 1px solid #1d2a5b;width: 150px;
+                    border-radius: 0;
+                    margin: 0;
+                    padding: 4px;margin-right: 15px;height: 23px;"
+                  />
+                </td>
+                <td>
+                  <button class="btn">
+                    Log In
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td
+                  style="padding: 4px 0px;
+                font-size: 14px;
+                cursor: pointer;
+                display: inline-block;
+               "
+                >
+                  <a href="#" class="line">Forgotten account?</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="account">
+        <div>
+          <p
+            style="color: #0e385f;
+          font-size: 23px;
+              line-height: 29px;font-weight: 900"
+          >
+            Facebook helps you connect and share with the<br />
+            people in your life
+          </p>
 
+          <p>
+            <img style="margin-top:5px" src="loction.png" alt="loction" />
+          </p>
+        </div>
+
+        <div>
+          <h1 style=" font-size: 37px;font-weight: bold;margin-bottom: 13px">
+            Create an account
+          </h1>
+          <h3
+            style="color: #1d2129;
+          font-size: 20px;margin-bottom: 20px;font-weight: 900"
+          >
+            It's quick and easy.
+          </h3>
+          <div style="width:400px">
+            <input
+              style="width: 48%;border: 1px solid  #c2c9d0;;border-radius: 0;font-size: 18px;padding: 8px 10px;margin-right: 8px;border-radius: 5px;margin-bottom: 10px"
+              type="text"
+            />
+
+            <input
+              style="width: 48%;font-size: 18px;padding: 8px 10px;border-radius: 5px;border: 1px solid  #c2c9d0;;border-radius: 0;border-radius: 5px"
+              type="text"
+            />
+
+            <input
+              style="font-size: 18px;padding: 8px 10px;border-radius:
+          5px;border: 1px solid  #c2c9d0;;border-radius: 0;border-radius: 5px;width: 100%;margin-bottom: 10px"
+              type="text"
+            />
+            <input
+              style="font-size: 18px;padding: 8px 10px;border-radius:
+        5px;border: 1px solid #c2c9d0;border-radius: 0;border-radius: 5px;width: 100%;margin-bottom: 10px"
+              type="text"
+            />
+          </div>
+          <h3
+            style="    color: #90949c;
+          font-size: 19px;
+          font-weight: 900;margin: 12px 0 5px;"
+          >
+            Birthday
+          </h3>
+          <select style="width:50px"
+            ><option>Day</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+          </select>
+          <select style="width:65px"
+            ><option>Month</option>
+            <option>Jan</option>
+            <option>Feb</option>
+            <option>Mar</option>
+            <option>Apr</option>
+            <option>May</option>
+            <option>Jun</option>
+            <option>Jul</option>
+            <option>Aug</option>
+            <option>Sept</option>
+            <option>Oct</option>
+            <option>Nov</option>
+            <option>Dec</option></select
+          >
+          <select style="width:60px">
+            <option>Year</option
+            ><option>2000</option>
+            <option>2001</option>
+            <option>2002</option>
+            <option>2003</option>
+            <option>2004</option>
+            <option>2005</option>
+            <option>2006</option>
+            <option>2007</option>
+            <option>2008</option>
+            <option>2009</option>
+            <option>2010</option>
+            <option>2011</option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option> </select
+          ><span
+            style="color: lightgray ;margin-left:13px;padding:0 4px;background-color:#707178;border-radius: 100%;font-size: 15px ;cursor: pointer;"
+            >?</span
+          >
+          <h3
+            style="color: #90949c;font-size: 19px;
+            font-weight: 900;margin: 12px 0 0;
+          "
+          >
+            Gender
+          </h3>
+          <input
+            style="margin: 15px 7px 20px 13px;"
+            type="radio"
+            name="gender"
+            value="female"
+          /><span
+            style="color: #1d2129;
+          font-size: 18px;
+          font-weight: 900;"
+            >Female</span
+          >
+
+          <input
+            style="margin: 15px 0 20px 15px;"
+            type="radio"
+            name="gender"
+            value="male"
+          />
+          <span
+            style="color: #1d2129;
+        font-size: 18px;
+        font-weight: 900;"
+            >Male</span
+          ><input
+            style="margin: 15px 7px 20px 23px;"
+            type="radio"
+            name="gender"
+            value="others"
+          /><span
+            style="color: #1d2129;
+        font-size: 18px;
+        font-weight: 900;"
+            >Custom</span
+          ><span
+            style="color: lightgray ;margin-left:20px;padding:0 4px;background-color:#707178;border-radius: 100%;font-size: 15px;cursor: pointer; "
+            >?</span
+          >
+          <p style="font-size:11px;line-height: 13px">
+            <b>
+              By clicking Sign Up, you agree to our Terms, Data Policy<br />
+              and Cookie Policy. You may receive SMS notifications from<br />
+              us and can opt out at any time.</b
+            >
+          </p>
+          <button class="sub-btn">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+    <div style="margin:auto;width:980px">
+      <ul class="lang">
+        <li>English (UK)</li>
+        <li class="ul-line">हिन्दी</li>
+        <li class="ul-line">اردو</li>
+        <li class="ul-line">தமிழ்</li>
+        <li class="ul-line">বাংলা</li>
+        <li class="ul-line">मराठी</li>
+        <li class="ul-line">తెలుగు</li>
+        <li class="ul-line">ગુજરાતી</li>
+        <li class="ul-line">ಕನ್ನಡ</li>
+        <li class="ul-line">മലയാളം</li>
+        <li class="ul-line">
+          Español
+        </li>
+      </ul>
+      <div
+        style="height:1px;background-color: #dddfe2;
+font-size: 1px;
+margin-top: 6px;
+margin-bottom: 6px;"
+      ></div>
+      <ul class="lang1">
+        <li class="ul-line">
+          Sign Up
+        </li>
+        <li class="ul-line">Log In</li>
+        <li class="ul-line">Messenger</li>
+        <li class="ul-line">Facebook Lite</li>
+        <li class="ul-line">People</li>
+        <li class="ul-line">Pages</li>
+        <li class="ul-line">Page categories</li>
+        <li class="ul-line">Places</li>
+        <li class="ul-line">Games</li>
+        <li class="ul-line">Locations</li>
+        <li class="ul-line">Marketplace</li>
+        <li class="ul-line">Groups</li>
+        <li class="ul-line">Instagram</li>
+        <li class="ul-line">Local</li>
+      </ul>
+      <ul class="lang1">
+        <li>
+          Fundraisers
+        </li>
+        <li class="ul-line">Services</li>
+        <li class="ul-line">About</li>
+        <li class="ul-line">Create ad</li>
+        <li class="ul-line">Create Page</li>
+        <li class="ul-line">Developers</li>
+        <li class="ul-line">Careers</li>
+        <li class="ul-line">Privacy</li>
+        <li class="ul-line">Cookies</li>
+        <li class="ul-line">AdChoices</li>
+        <li class="ul-line">Terms</li>
+        <li class="ul-line">Account security</li>
+        <li class="ul-line">Login help</li>
+      </ul>
+      <ul class="lang1">
+        <li class="ul-line">Help</li>
+      </ul>
+      <p
+        style="  font-size: 13px;
+        color: #737373;;
+      font-weight: 900;margin-top: 15px"
+      >
+        Facebook © 2019
+      </p>
+    </div>
   </body>
 </html>
+
