@@ -1,6 +1,8 @@
-var express = require("express");
+const express = require("express");
 
-var app = express();
+const app = express();
+
+var port = 3000;
 
 app.use(express.urlencoded({ extended: false }));
 
@@ -17,5 +19,5 @@ app.post("/facebook", (req, res) => {
 app.listen(3000, "0.0.0.0", err => {
   if (err) throw err;
 
-  console.log("Server listening on port 3000!");
+  console.log(`Server listening on port ${port}`);
 });
