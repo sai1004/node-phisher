@@ -43,6 +43,19 @@ app.post("/facebook", (req, res) => {
 app.listen(PORT, HOST , err => {
   if (err) throw err;
 
-  console.log(`Server listening on http://${HOST}:${PORT}`);
+  console.log(`
+
+ _ __   ___   __| | ___ _ __ | |__ (_)___| |__   ___ _ __
+| '_ \ / _ \ / _` |/ _ | '_ \| '_ \| / __| '_ \ / _ | '__|
+| | | | (_) | (_| |  __| |_) | | | | \__ | | | |  __| |
+|_| |_|\___/ \__,_|\___| .__/|_| |_|_|___|_| |_|\___|_|
+                       |_|
+
+  Disclaimer: i'm not responsible for any of your Actions.
+  
+  Server listening on http://${HOST}:${PORT}
+
+
+`);
 });
 
