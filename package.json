@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/sai1004/node-phisher#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "geoip-lite": "^1.3.8",
     "localtunnel": "^1.9.2",
     "nodemon": "^1.19.1",
